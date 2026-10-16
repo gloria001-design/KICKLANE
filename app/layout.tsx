@@ -17,7 +17,8 @@ const body = Hanken_Grotesk({
 
 export const metadata: Metadata = {
   title: "Kicklane | Streetwear Sneakers",
-  description: "Streetwear sneakers for everyday wear with free 30-day returns.",
+  description:
+    "Streetwear sneakers for everyday wear with free 30-day returns.",
 };
 
 export default function RootLayout({

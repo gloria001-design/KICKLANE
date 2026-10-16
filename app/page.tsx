@@ -77,11 +77,26 @@ export default function Home() {
       </section>
 
       {/* Ticker */}
-      <div className="overflow-x-clip py-6">
-        <div className="-mx-6 whitespace-nowrap border-y-[3px] border-[#111] bg-[#111] py-3 font-[family-name:var(--font-display)] text-3xl uppercase tracking-wider text-[#FFD60A] motion-safe:-rotate-1">
-          {ticker.repeat(6)}
-        </div>
-      </div>
+    
+{/* Ticker */}
+<style>{`
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+`}</style>
+
+<div className="overflow-x-clip py-6">
+  <div className="-mx-6 overflow-hidden border-y-[3px] border-[#111] bg-[#111] py-3 motion-safe:-rotate-1">
+    <div
+      className="flex w-max font-[family-name:var(--font-display)] text-3xl uppercase tracking-wider text-[#FFD60A]"
+      style={{ animation: "marquee 25s linear infinite" }}
+    >
+      <span className="shrink-0 whitespace-pre">{ticker.repeat(6)}</span>
+      <span className="shrink-0 whitespace-pre" aria-hidden="true">{ticker.repeat(6)}</span>
+    </div>
+  </div>
+</div>
 
       {/* Featured */}
       <section aria-labelledby="featured" className="mx-auto max-w-7xl px-6 pt-10">
